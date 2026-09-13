@@ -1,0 +1,17 @@
+{
+  "description": "Model settings documented in Supplementary Table S3i and Texts S5-S6; configuration only",
+  "architecture": {
+    "recurrent_unit": "LSTM", "layers": 2, "hidden_size": 128,
+    "attention": "additive", "attention_heads": 1, "dropout": 0.2,
+    "predictive_distribution": "Gaussian", "context_length_records": 96,
+    "prediction_length_records": 8
+  },
+  "optimization": {"optimizer": "Adam", "learning_rate": 0.0008, "batch_size": 64},
+  "dynamic_l2": {"schedule": "sigmoid indexed by training epoch", "lambda_min": 0.000005,
+    "lambda_max": 0.0003, "k": 0.5, "e0": 40},
+  "run_selection": {"parameters": ["hidden_size", "lambda_max"], "criterion": "validation NLL",
+    "population": 24, "warm_up_epochs": 8, "iterations": 4},
+  "early_stopping": {"criterion": "validation RMSE", "patience_epochs": 20,
+    "restore_best_validation_checkpoint": true},
+  "chronological_split_fractions": {"train": 0.70, "validation": 0.15, "test": 0.15}
+}

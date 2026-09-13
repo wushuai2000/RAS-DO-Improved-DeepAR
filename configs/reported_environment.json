@@ -1,0 +1,21 @@
+{
+  "description": "Documented experiment environment transcribed from Supplementary Table S9; not an automatically detected runtime",
+  "acquisition_and_control": {
+    "device": "Raspberry Pi-based unit", "ram_gb": 4, "storage_gb": 64,
+    "os": "Raspberry Pi OS 64-bit; Debian 12 Bookworm", "python": "3.11.2", "io_library": "pigpio"
+  },
+  "model_development": {
+    "cpu": "12th-generation Intel Core i7", "ram_gb": 32, "gpu": "NVIDIA GeForce RTX 4070",
+    "os": "Windows 11 Pro 23H2, build 22631", "python": "3.11.9", "pytorch": "2.6.0",
+    "pytorch_cuda_build": "12.4",
+    "libraries": {"numpy": "2.2.2", "pandas": "2.2.3", "scikit-learn": "1.6.1",
+      "scipy": "1.15.1", "matplotlib": "3.10.0", "shap": "0.46.0", "optuna": "4.2.0"}
+  },
+  "controller_simulation": {
+    "matlab_simulink": "R2025a", "toolboxes": ["Control System Toolbox", "Fuzzy Logic Toolbox"],
+    "solver": "fixed-step ode4 (Runge-Kutta)", "integration_step_seconds": 0.01,
+    "controller_update_seconds": 1
+  },
+  "recording_intervals": {"laboratory_monitoring_minutes": 30, "field_monitoring_minutes": 30,
+    "laboratory_ammonia_and_cod_minutes": 10}
+}
