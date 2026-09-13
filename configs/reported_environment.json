@@ -17,5 +17,20 @@
     "controller_update_seconds": 1
   },
   "recording_intervals": {"laboratory_monitoring_minutes": 30, "field_monitoring_minutes": 30,
-    "laboratory_ammonia_and_cod_minutes": 10}
+    "laboratory_ammonia_and_cod_minutes": 10},
+  "forecast_control_timing": {
+    "forecast_steps": 8, "forecast_step_minutes": 30,
+    "forecast_role": "Input for outer-loop aeration adjustment",
+    "simulation_controller_update_seconds": 1,
+    "note": "The forecasting time grid and simulation controller execution interval are distinct."
+  },
+  "field_do_comparison": {
+    "arrangement": "Separate periods in the same pond on the same aeration equipment",
+    "strategies": ["Conventional PID", "Fuzzy PID", "Forecast-assisted DMC-PID"],
+    "duration_days_per_strategy": 7, "do_setpoint_mg_per_l": 7,
+    "record_interval_minutes": 30,
+    "figure_scope": "Figure 5f and Supplementary Table S7",
+    "sample_axis": "Index within each strategy-specific record",
+    "feeding_regime": "Common prescribed regime during the comparison"
+  }
 }
